@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Store</title>
+    <link rel="stylesheet" type="text/css" href="all_item_pagestyle.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="home_page.html">🎮 GameShop</a></div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for games..." onkeyup="searchGames()">
+        </div>
+        <a href="shopping_cart_sample.html" class="cart-btn"> 🛒 Cart</a>
+        <button id="loginBtn" onclick="location.href='login_sample.html'">Login</button>
+    </header>
+
+    <section class="slider">
+      <div class="slides">
+        <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357202106863452223/Game_thumbnail.png?ex=67f1fb75&is=67f0a9f5&hm=a2b1b09f2106b69ab17c0d5e9ce906335ef4d2ff4caf7e498eba597433e37e9f&" alt="Assassin's Creed Shadows"></div>
+        <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201227644932216/game_thumbnai.png?ex=67f1faa4&is=67f0a924&hm=ad6cb6fcc450035e8dd10acd0b1629c2b8f0b789ddcd653ee8e91dd2ae7d9283&" alt="Persona 5 Royale"></div>
+        <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357774989570474115/Cyberpunk_hi_res_image.jpg?ex=67f216bf&is=67f0c53f&hm=4b121a41a281f1aeefcde32f0db48610b85e15478235dd1e2a7501e9a76a3002&" alt="Cyberpunk 2077"></div>
+        <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357780486742605896/843016.jpg?ex=67f21bde&is=67f0ca5e&hm=e70bacd0623571719f503f1bd0e27984aa8689461354d8edcd7790dc60aeff9e&" alt="God of War"></div>
+        <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201770954100867/game_thumbnail.png?ex=67f1fb25&is=67f0a9a5&hm=b9cd76f6d8afb8533ab4cba890400aeb25ec4719ffb888549db2eeff6079f411&" alt="Dark Souls 3"></div>
+        <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357785615512506649/Game_thumbnail.jpg?ex=67f220a5&is=67f0cf25&hm=a7c1c3d7e272a6eb94d095fd1006ad466edbe7e14704fe7a0899864774bed0db&" alt="Hollow Knight"></div>
+      </div>
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      <div class="dots">
+          <span class="dot" onclick="setSlide(0)"></span>
+          <span class="dot" onclick="setSlide(1)"></span>
+          <span class="dot" onclick="setSlide(2)"></span>
+          <span class="dot" onclick="setSlide(3)"></span>
+          <span class="dot" onclick="setSlide(4)"></span>
+          <span class="dot" onclick="setSlide(5)"></span>
+      </div>
+    </section>
+    <div class="container">
+        <!-- Sidebar Filter -->
+        <aside>
+            <h2>Filters</h2>
+            <label>Platform</label>
+            <select id="platform">
+                <option value="all">All</option>
+                <option value="pc">PC</option>
+                <option value="ps5">PlayStation 5</option>
+                <option value="xbox">Xbox</option>
+                <option value="switch">Nintendo Switch</option>
+            </select>
+
+            <label>Genre</label>
+            <select id="genre">
+                <option value="all">All</option>
+                <option value="action">Action</option>
+                <option value="rpg">RPG</option>
+                <option value="sports">Sports</option>
+                <option value="fps">FPS</option>
+            </select>
+
+            <label>Price Range: <span id="priceDisplay">$30 - $70</span></label>
+             <input type="range" id="priceFilter" min="0" max="100" step="5" value="70">
+            <span id="priceValue">$100</span>
+
+            <button onclick="filterGames()">Apply Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <!-- Main Content - Updated Game Cards -->
+<main id="gameList">
+    <div class="game-card" data-platform="ps5" data-genre="action" data-price="60">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1358035160532254831/Game_thumbnail.jpg?ex=67f2604d&is=67f10ecd&hm=ff84a46279a914498d64791487ae8c19d2f525b44e40d2419b7d7a1e9454df0e&" alt="RDR 2" onerror="this.src='https://via.placeholder.com/150'">
+        <h3><a href="product_page.html">Red Dead Redemption 2</a></h3>
+        <p>PS5 | Action</p>
+        <p>Step into the boots of Arthur Morgan in this epic Western adventure featuring an immersive open world and gripping story.</p>
+        <span>$60</span>
+    </div>
+    
+    <div class="game-card" data-platform="pc" data-genre="fps" data-price="45">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201472881688709/Game_thumbnail.png?ex=67f1fade&is=67f0a95e&hm=bf4f6b1b330513ee6cea78c773aefe0729ea0edc66ab99bd0700ef2999774e86&" alt="Half-Life: Alyx" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Half-Life: Alyx</h3>
+        <p>PC | FPS</p>
+        <p>VR masterpiece set between Half-Life 1 and 2 where you play as Alyx Vance fighting the Combine.</p>
+        <span>$45</span>
+    </div>
+    
+    <div class="game-card" data-platform="ps5" data-genre="rpg" data-price="55">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357236615218593894/Hi_res_image.png?ex=67f21b99&is=67f0ca19&hm=d8b793731baa9b7c1e856f9f4b9d1064d0ed5fcfc521c21a2182f3f990b29ae4&" alt="Persona 5 Royal" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Persona 5 Royal</h3>
+        <p>PS5 | RPG</p>
+        <p>Enhanced version of the award-winning JRPG with new characters, story content, and gameplay improvements.</p>
+        <span>$55</span>
+    </div>
+    
+    <div class="game-card" data-platform="pc" data-genre="action" data-price="60">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357202106863452223/Game_thumbnail.png?ex=67f1fb75&is=67f0a9f5&hm=a2b1b09f2106b69ab17c0d5e9ce906335ef4d2ff4caf7e498eba597433e37e9f&" alt="Assassin's Creed Shadows" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Assassin's Creed Shadows</h3>
+        <p>PC | Action</p>
+        <p>Become a lethal shinobi assassin in Feudal Japan in this latest AC installment.</p>
+        <span>$60</span>
+    </div>
+    
+    <div class="game-card" data-platform="pc" data-genre="action" data-price="50">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201770954100867/game_thumbnail.png?ex=67f1fb25&is=67f0a9a5&hm=b9cd76f6d8afb8533ab4cba890400aeb25ec4719ffb888549db2eeff6079f411&" alt="Dark Souls 3" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Dark Souls 3</h3>
+        <p>PC | Action</p>
+        <p>The final chapter in the Dark Souls series with punishing combat and rich dark fantasy lore.</p>
+        <span>$50</span>
+    </div>
+    
+    <div class="game-card" data-platform="ps5" data-genre="action" data-price="70">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201438274490508/Game_thumbnail.png?ex=67f1fad6&is=67f0a956&hm=eda1bcd52c76c61d5152f417dfe13e2c7326a7ab97880f58ca1afa81bdd334cf&" alt="Monster Hunter World" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Monster Hunter World</h3>
+        <p>PS5 | Action</p>
+        <p>Hunt monsters in beautiful ecosystems in this best-selling action RPG.</p>
+        <span>$70</span>
+    </div>
+    
+    <div class="game-card" data-platform="switch" data-genre="adventure" data-price="60">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357778774011412791/4k_image.jpg?ex=67f21a46&is=67f0c8c6&hm=a684f017452dbbdb815886858fedb5c3798cbdd780cf0c32b6024f27ed9ae993&" alt="Legend of Zelda: Tears of the Kingdom" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Legend of Zelda: Tears of the Kingdom</h3>
+        <p>Switch | Adventure</p>
+        <p>Explore the vast landscapes of Hyrule in this epic open-air adventure.</p>
+        <span>$60</span>
+    </div>
+    
+    <div class="game-card" data-platform="ps5" data-genre="action" data-price="70">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357780486742605896/843016.jpg?ex=67f21bde&is=67f0ca5e&hm=e70bacd0623571719f503f1bd0e27984aa8689461354d8edcd7790dc60aeff9e&" alt="God of War Ragnarök" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>God of War Ragnarök</h3>
+        <p>PS5 | Action</p>
+        <p>Kratos and Atreus journey through the Nine Realms in search of answers.</p>
+        <span>$70</span>
+    </div>
+    
+    <div class="game-card" data-platform="ps5" data-genre="horror" data-price="50">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201139258626099/Game_thumbnail.png?ex=67f1fa8f&is=67f0a90f&hm=facebe2958da8e237813776fc3132ace9321c52c373e197fc01db4649eedfc97&" alt="Resident Evil 4" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Resident Evil 4</h3>
+        <p>PS5 | Horror</p>
+        <p>Survival horror game following Leon S. Kennedy's mission to rescue the President's daughter.</p>
+        <span>$50</span>
+    </div>
+    
+    <div class="game-card" data-platform="pc" data-genre="action" data-price="55">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357200878611988511/Game_thumbnai.png?ex=67f1fa51&is=67f0a8d1&hm=d78185138a4b82fc02a78d09ba2247656c6f906022ea2dcc2b301523dfb29311&" alt="Sekiro: Shadows Die Twice" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Sekiro: Shadows Die Twice</h3>
+        <p>PC | Action</p>
+        <p>Hardcore action game set in feudal Japan with intense sword combat.</p>
+        <span>$55</span>
+    </div>
+    
+    <div class="game-card" data-platform="ps5" data-genre="fps" data-price="70">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201731997401138/game_thumbnail.png?ex=67f1fb1c&is=67f0a99c&hm=00d73fae535d933988395ca6b318e112d91ec0e227bf6f73e9cbba38078fbbf9&" alt="DOOM Eternal" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>DOOM Eternal</h3>
+        <p>PS5 | FPS</p>
+        <p>Battle hordes of demons in this fast-paced, action-packed FPS with brutal combat.</p>
+        <span>$70</span>
+    </div>
+    
+    <div class="game-card" data-platform="ps5" data-genre="fighting" data-price="50">
+        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357200422464651355/Game_thubnail.png?ex=67f1f9e4&is=67f0a864&hm=4900bda96bb6ccc4f81030d5fb7a15f0b9b7940edf35764659ded805f8650cbf&" alt="Street Fighter 6" onerror="this.src='https://via.placeholder.com/150'">
+        <h3>Street Fighter 6</h3>
+        <p>PS5 | Fighting</p>
+        <p>Experience the next level of fighting games with stunning visuals and new mechanics.</p>
+        <span>$50</span>
+    </div>
+</main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>About Us: GameShop is your one-stop destination for the latest and greatest video games. We offer a wide variety of games across all platforms with great deals!</p>
+        <div class="social-icons">
+          <a href="#">🔵 Facebook</a>
+          <a href="#">📷 Instagram</a>
+          <a href="#">🐦 Twitter</a>
+      </div>
+  
+      <p>&copy; 2025 GameShop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Slider functionality
+    // Slider functionality
+let currentIndex = 0;
+let autoSlideInterval;
+const slides = document.querySelector(".slides");
+const slideElements = document.querySelectorAll(".slide"); // Changed to target .slide elements
+const dots = document.querySelectorAll(".dot");
+const totalSlides = slideElements.length; // Now counts .slide divs instead of images
+
+function updateSlider() {
+    // Reset transition for instant response
+    slides.style.transition = "none";
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Force reflow to apply the immediate change
+    void slides.offsetWidth;
+    
+    // Reapply smooth transition
+    slides.style.transition = "transform 0.5s ease-in-out";
+    
+    // Update dots
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+}
+
+function moveSlide(step) {
+    currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+    updateSlider();
+    resetAutoSlide();
+}
+
+function setSlide(index) {
+    currentIndex = index;
+    updateSlider();
+    resetAutoSlide();
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => moveSlide(1), 3000);
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Initialize slider
+updateSlider();
+startAutoSlide();
+
+// Pause on hover
+document.querySelector(".slider").addEventListener("mouseenter", () => {
+    clearInterval(autoSlideInterval);
+});
+document.querySelector(".slider").addEventListener("mouseleave", startAutoSlide);
+
+    // Price filter
+    const priceSlider = document.getElementById("priceFilter");
+    const priceDisplay = document.getElementById("priceDisplay");
+
+    priceSlider.addEventListener("input", function() {
+        priceDisplay.textContent = `$0 - $${this.value}`;
+        document.getElementById("priceValue").textContent = `$${this.value}`;
+    });
+
+    // Filter games
+    function filterGames() {
+        const selectedPlatform = document.getElementById("platform").value;
+        const selectedGenre = document.getElementById("genre").value;
+        const maxPrice = parseInt(document.getElementById("priceFilter").value);
+
+        document.querySelectorAll(".game-card").forEach(game => {
+            const gamePlatform = game.dataset.platform;
+            const gameGenre = game.dataset.genre;
+            const gamePrice = parseInt(game.dataset.price);
+
+            const platformMatch = selectedPlatform === "all" || selectedPlatform === gamePlatform;
+            const genreMatch = selectedGenre === "all" || selectedGenre === gameGenre;
+            const priceMatch = gamePrice <= maxPrice;
+
+            game.style.display = platformMatch && genreMatch && priceMatch ? "block" : "none";
+        });
+    }
+
+    // Search games
+    function searchGames() {
+        const searchQuery = document.getElementById("search").value.toLowerCase();
+        
+        document.querySelectorAll(".game-card").forEach(game => {
+            const title = game.querySelector("h3").textContent.toLowerCase();
+            game.style.display = title.includes(searchQuery) ? "block" : "none";
+        });
+    }
+
+    // Image error handling
+    function handleImageError(img) {
+        if (!img.dataset.errorHandled) {  
+            img.src = "https://via.placeholder.com/300x150?text=Game+Image";
+            img.dataset.errorHandled = "true"; 
+        }
+    }
+
+    // Initialize image error handlers
+    document.querySelectorAll(".game-card img").forEach(img => {
+        img.onerror = function() {
+            handleImageError(this);
+        };
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | GameShop</title>
+    <link rel="stylesheet" href="home_pagestyle.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🎮 GameShop</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for games...">
+        </div>
+        <a href="shopping_cart_sample.html" class="cart-btn"> 🛒 Cart</a>
+        <button id="loginBtn" onclick="location.href='login_sample.html'">Login</button>
+    </header>
+
+    <!-- Game Banner -->
+    <section class="slider">
+        <div class="slides">
+            <div class="slide"><img src="https://private-user-images.githubusercontent.com/118252727/430813542-fec6c499-5aa2-41de-aa9b-97f5574fb294.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQwMDc5MjQsIm5iZiI6MTc0NDAwNzYyNCwicGF0aCI6Ii8xMTgyNTI3MjcvNDMwODEzNTQyLWZlYzZjNDk5LTVhYTItNDFkZS1hYTliLTk3ZjU1NzRmYjI5NC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDQwNyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA0MDdUMDYzMzQ0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZDA1OTZlYjUxYjE1Njc0YTE3ZTY3YzVlMWE1ZjkzZGM4MDc2NTlhNmU1NWEzZjQwNmE5YTNkMzk4NjVlYjQxZCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.3ExUkJZPpi1B6Ij3EKgP5UI1GMwd_3bdT0JX2lFRDT8" alt="Assassin's Creed Shadows"></div>
+            <div class="slide"><img src="https://private-user-images.githubusercontent.com/118252727/430813893-cfc652d7-dac4-4174-9897-5f46458d8b96.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQwMDc5ODQsIm5iZiI6MTc0NDAwNzY4NCwicGF0aCI6Ii8xMTgyNTI3MjcvNDMwODEzODkzLWNmYzY1MmQ3LWRhYzQtNDE3NC05ODk3LTVmNDY0NThkOGI5Ni5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQwN1QwNjM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZTRmYTdmZTA3ZTc0NWJmMjFjZDhiMDhlN2YyMmRkOGQwNmNkOThiMzZhNDMzNjY3OTEzNGQxYzkwNjY2ODcwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.-aUZSPVaNDv6JIPsQsme_h201172F7Z3ksNrQmUaTcM" alt="Persona 5 Royale"></div>
+            <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357774989570474115/Cyberpunk_hi_res_image.jpg?ex=67f216bf&is=67f0c53f&hm=4b121a41a281f1aeefcde32f0db48610b85e15478235dd1e2a7501e9a76a3002&" alt="Cyberpunk 2077"></div>
+            <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357780486742605896/843016.jpg?ex=67f21bde&is=67f0ca5e&hm=e70bacd0623571719f503f1bd0e27984aa8689461354d8edcd7790dc60aeff9e&" alt="God of War"></div>
+            <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201770954100867/game_thumbnail.png?ex=67f1fb25&is=67f0a9a5&hm=b9cd76f6d8afb8533ab4cba890400aeb25ec4719ffb888549db2eeff6079f411&" alt="Dark Souls 3"></div>
+            <div class="slide"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357785615512506649/Game_thumbnail.jpg?ex=67f220a5&is=67f0cf25&hm=a7c1c3d7e272a6eb94d095fd1006ad466edbe7e14704fe7a0899864774bed0db&" alt="Hollow Knight"></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="dots"></div>
+    </section>
+
+    <!-- Featured Games -->
+    <div class="game-section">
+        <h2>🔥 Featured Games</h2>
+        <div class="game-list">
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201438274490508/Game_thumbnail.png?ex=67f1fad6&is=67f0a956&hm=eda1bcd52c76c61d5152f417dfe13e2c7326a7ab97880f58ca1afa81bdd334cf&" alt="Monster Hunter World"><h3>Monster Hunter World</h3><p>Hunt monsters make them your weapons</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357774534878560407/Hi_res_image.webp?ex=67f21653&is=67f0c4d3&hm=c4bb777cbc02d81a72e6049300ae81ee6f595b0f5ef9ce2742fb606505ab5aad&" alt="Baldur's Gate 3"><h3>Baldur's Gate 3</h3><p>Fantasy RPG with stunning graphics and turn based combat</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201840219099227/Game_thumbnail.png?ex=67f1fb36&is=67f0a9b6&hm=8efdea66565962bfe25afe745acbc6bd1d6aeff678d50ad02c633285f238b488&" alt="Cyberpunk 2077"><h3>Cyberpunk 2077</h3><p>Beautiful futuristic dystopia awaits</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357236615218593894/Hi_res_image.png?ex=67f21b99&is=67f0ca19&hm=d8b793731baa9b7c1e856f9f4b9d1064d0ed5fcfc521c21a2182f3f990b29ae4&" alt="Persona 5 Royal"><h3>Persona 5 Royal</h3><p>Steal their hearts Phantom Thieves</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357778774011412791/4k_image.jpg?ex=67f21a46&is=67f0c8c6&hm=a684f017452dbbdb815886858fedb5c3798cbdd780cf0c32b6024f27ed9ae993&" alt="Legend of Zelda"><h3>Legend of Zelda: Tears of the Kingdom</h3><p>Action-adventure in a new Hyrule</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357780486742605896/843016.jpg?ex=67f21bde&is=67f0ca5e&hm=e70bacd0623571719f503f1bd0e27984aa8689461354d8edcd7790dc60aeff9e&" alt="God of War"><h3>God of War (2018)</h3><p>A new tale of the Greek god continues</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201770954100867/game_thumbnail.png?ex=67f1fb25&is=67f0a9a5&hm=b9cd76f6d8afb8533ab4cba890400aeb25ec4719ffb888549db2eeff6079f411&" alt="Dark Souls 3"><h3>Dark Souls 3</h3><p>Prepare to die</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201731997401138/game_thumbnail.png?ex=67f1fb1c&is=67f0a99c&hm=00d73fae535d933988395ca6b318e112d91ec0e227bf6f73e9cbba38078fbbf9&" alt="Doom Eternal"><h3>Doom Eternal</h3><p>Rip and tear until it is done</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+        </div>
+    </div>
+
+    <!-- Best Sellers -->
+    <div class="game-section">
+        <h2>🏆 Best Sellers</h2>
+        <div class="game-list">
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1356527090102435941/Game_thumbnail.jpg?ex=67f229cd&is=67f0d84d&hm=d147d9fff94f406c08ba8bdf65c96a2e6b955d1a0c5fcdaa16388bb5d8f1d3a6&" alt="Red Dead Redemption 2"><h3>Red Dead Redemption 2</h3><p>Journey of Arthur Morgan</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1356523527750156371/Ac_Shadows.jpeg?ex=67f2267c&is=67f0d4fc&hm=a19b185e760b3822a34dbb2f20b76b43d996e10452548dbe4bedb994df2e603d&" alt="Assassin's Creed Shadows"><h3>Assassin's Creed Shadows</h3><p>Become a lethal shinobi assassin in Feudal Japan</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201642415587398/game_rhumbnail.png?ex=67f1fb07&is=67f0a987&hm=48af9f72d0fe6ce79bc4d783de56a366d515bf2070333328a108dc99a4cb9ae8&" alt="Final Fantasy 7 Remake"><h3>Final Fantasy 7 Remake</h3><p>Reimagines the classic RPG with stunning visuals</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357200422464651355/Game_thubnail.png?ex=67f1f9e4&is=67f0a864&hm=4900bda96bb6ccc4f81030d5fb7a15f0b9b7940edf35764659ded805f8650cbf&" alt="Street Fighter 6"><h3>Street Fighter 6</h3><p>Heart pumping action combat</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357200878611988511/Game_thumbnai.png?ex=67f1fa51&is=67f0a8d1&hm=d78185138a4b82fc02a78d09ba2247656c6f906022ea2dcc2b301523dfb29311&" alt="Sekiro"><h3>Sekiro: Shadows Die Twice</h3><p>Skill based action game pushing you to the limits</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201139258626099/Game_thumbnail.png?ex=67f1fa8f&is=67f0a90f&hm=facebe2958da8e237813776fc3132ace9321c52c373e197fc01db4649eedfc97&" alt="Resident Evil 4"><h3>Resident Evil 4 Remake</h3><p>Fight horrendous monsters</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201472881688709/Game_thumbnail.png?ex=67f1fade&is=67f0a95e&hm=bf4f6b1b330513ee6cea78c773aefe0729ea0edc66ab99bd0700ef2999774e86&" alt="Half-Life Alyx"><h3>Half-Life: Alyx</h3><p>Fight against oppression, fight against the combine</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+            <div class="game-card"><img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357785615512506649/Game_thumbnail.jpg?ex=67f220a5&is=67f0cf25&hm=a7c1c3d7e272a6eb94d095fd1006ad466edbe7e14704fe7a0899864774bed0db&" alt="Hollow Knight"><h3>Hollow Knight</h3><p>Award winning metroidvania</p><a href="product_page.html" class="buy-now-btn">Buy Now</a></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#">🔵 Facebook</a>
+            <a href="#">📷 Instagram</a>
+            <a href="#">🐦 Twitter</a>
+        </div>
+        <p>&copy; 2025 GameShop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Slider functionality
+            const slides = document.querySelector('.slides');
+            const slideItems = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const dotsContainer = document.querySelector('.dots');
+            
+            let currentIndex = 0;
+            let autoSlideInterval;
+            const totalSlides = slideItems.length;
+            const slideWidth = 100; // Percentage
+            
+            // Create dots
+            slideItems.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => moveToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            const dots = document.querySelectorAll('.dot');
+            
+            // Initialize slider
+            function initSlider() {
+                updateSlider();
+                startAutoSlide();
+            }
+            
+            // Update slider position and active dot
+            function updateSlider() {
+                slides.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // Move to specific slide
+            function moveToSlide(index) {
+                currentIndex = index;
+                resetTransition();
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            // Move slide by direction (-1 for prev, 1 for next)
+            function moveSlide(direction) {
+                currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+                resetTransition();
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            // Reset transition for instant response
+            function resetTransition() {
+                slides.style.transition = 'none';
+                void slides.offsetWidth; // Trigger reflow
+                slides.style.transition = 'transform 0.5s ease-in-out';
+            }
+            
+            // Auto-slide functionality
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    moveSlide(1);
+                }, 5000);
+            }
+            
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            // Event listeners
+            prevBtn.addEventListener('click', () => moveSlide(-1));
+            nextBtn.addEventListener('click', () => moveSlide(1));
+            
+            // Pause on hover
+            const slider = document.querySelector('.slider');
+            slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            slider.addEventListener('mouseleave', startAutoSlide);
+            
+            // Handle broken images
+            document.querySelectorAll('.game-card img').forEach(img => {
+                img.onerror = function() {
+                    this.src = 'https://via.placeholder.com/300x200?text=Game+Image';
+                    this.onerror = null;
+                };
+            });
+            
+            // Initialize
+            initSlider();
+        });
+    </script>
+</body>
+</html>
