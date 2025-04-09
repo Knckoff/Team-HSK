@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="shopping_cart_style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="home_page.html">🎮 GameShop</a></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for games...">
+        </div>
+        <a href="shopping_cart_sample.html" class="cart-btn"> 🛒 Cart</a>
+        <button id="loginBtn" onclick="location.href='login_sample.html'">Login</button>
+    </header>
+
+    <main>
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div class="cart-item">
+                <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1358035160532254831/Game_thumbnail.jpg?ex=67f2604d&is=67f10ecd&hm=ff84a46279a914498d64791487ae8c19d2f525b44e40d2419b7d7a1e9454df0e&" alt="Red Dead Redemption 2" onerror="handleImageError(this)">
+
+                <div class="cart-info">
+                    <h3>Red Dead Redemption 2</h3>
+                    <p>PC, Steam Deck Verified</p>
+                    <p class="price">₹2,619.00</p>
+                </div>
+                <div class="cart-actions">
+                    <button class="decrement">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increment">+</button>
+                    <button class="remove">🗑</button>
+                </div>
+            </div>
+            <label><input type="checkbox" id="gift-checkbox"> Gift your basket to a friend</label>
+        </section>
+
+        <section class="voucher">
+            <h2>Vouchers & Gift Cards</h2>
+            <input type="text" id="voucher-code" placeholder="Enter Your Code">
+            <button id="apply-voucher">Apply</button>
+        </section>
+
+        <div class="related-games">
+            <h2>🔥 Related Games</h2>
+            <div class="game-list">
+                <div class="game-card" data-platform="pc" data-genre="rpg" data-price="2499">
+                    <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357774989570474115/Cyberpunk_hi_res_image.jpg?ex=67f216bf&is=67f0c53f&hm=4b121a41a281f1aeefcde32f0db48610b85e15478235dd1e2a7501e9a76a3002&" alt="Cyberpunk 2077 Cover" class="game-image" onerror="handleImageError(this)">
+                    <h3>Cyberpunk 2077</h3>
+                    <p>PC | RPG</p>
+                    <p>Enter the futuristic open world of Night City as cyber-enhanced mercenary V in this action-packed RPG.</p>
+                    <span class="game-price">₹2,499.00</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="game-card" data-platform="pc" data-genre="fps" data-price="1299">
+                    <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201472881688709/Game_thumbnail.png?ex=67f1fade&is=67f0a95e&hm=bf4f6b1b330513ee6cea78c773aefe0729ea0edc66ab99bd0700ef2999774e86&" alt="Half-Life: Alyx Cover" class="game-image" onerror="handleImageError(this)">
+                    <h3>Half-Life: Alyx</h3>
+                    <p>PC | FPS</p>
+                    <p>VR masterpiece that returns you to the Half-Life universe as Alyx Vance in the fight against the Combine.</p>
+                    <span class="game-price">₹1,299.00</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="game-card" data-platform="ps5" data-genre="rpg" data-price="3499">
+                    <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201227644932216/game_thumbnai.png?ex=67f1faa4&is=67f0a924&hm=ad6cb6fcc450035e8dd10acd0b1629c2b8f0b789ddcd653ee8e91dd2ae7d9283&" alt="Persona 5 Royal Cover" class="game-image" onerror="handleImageError(this)">
+                    <h3>Persona 5 Royal</h3>
+                    <p>PS5 | RPG</p>
+                    <p>Enhanced version of the award-winning JRPG with new characters, story content, and quality-of-life improvements.</p>
+                    <span class="game-price">₹3,499.00</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="game-card" data-platform="pc" data-genre="rpg" data-price="3599">
+                    <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357202079311200266/Game_thumnail.png?ex=67f1fb6f&is=67f0a9ef&hm=8ce55e4642d8d0fa37b60802ea1d0dee79024c407554bde9ad36a93f0631217b&" alt="Baldur's Gate 3 Cover" class="game-image" onerror="handleImageError(this)">
+                    <h3>Baldur's Gate 3</h3>
+                    <p>PC | RPG</p>
+                    <p>Epic fantasy RPG set in the Dungeons & Dragons universe with deep storytelling and tactical combat.</p>
+                    <span class="game-price">₹3,599.00</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="game-card" data-platform="pc" data-genre="action" data-price="2799">
+                    <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357201770954100867/game_thumbnail.png?ex=67f1fb25&is=67f0a9a5&hm=b9cd76f6d8afb8533ab4cba890400aeb25ec4719ffb888549db2eeff6079f411&" alt="Dark Souls 3 Cover" class="game-image" onerror="handleImageError(this)">
+                    <h3>Dark Souls 3</h3>
+                    <p>PC | Action</p>
+                    <p>The final chapter in the Dark Souls series with punishing combat and rich dark fantasy lore.</p>
+                    <span class="game-price">₹2,799.00</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="game-card" data-platform="ps5" data-genre="action" data-price="3999">
+                    <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1357236897860030514/god_of_war.1920x0.jpg?ex=67f21bdc&is=67f0ca5c&hm=187eabf9593a4037cf26e7b499ee212cbe43bcd69ff7997fb55c2a22f71cf400&" alt="God of War: Ragnarök Cover" class="game-image" onerror="handleImageError(this)">
+                    <h3>God of War: Ragnarök</h3>
+                    <p>PS5 | Action</p>
+                    <p>Kratos and Atreus journey through the Nine Realms in this epic Norse mythology adventure.</p>
+                    <span class="game-price">₹3,999.00</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <aside class="cart-summary">
+            <h2>Cart Summary</h2>
+            <p>Full Price: <span id="full-price">₹2,619.00</span></p>
+            <p><strong>Total: <span id="total-price">₹2,619.00</span></strong></p>
+            <p>This purchase will earn you <span class="xp">655 XP</span></p>
+            <a href="Payment_page.html" class="checkout">Proceed to Payment</a>
+            <p class="terms">By purchasing, you accept our terms and conditions and refund policy.</p>
+        </aside>
+    </main>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="#">🔵 Facebook</a>
+            <a href="#">📷 Instagram</a>
+            <a href="#">🐦 Twitter</a>
+        </div>
+        <p>&copy; 2025 GameShop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quantity controls
+            const decrementBtn = document.querySelector('.decrement');
+            const incrementBtn = document.querySelector('.increment');
+            const quantityDisplay = document.querySelector('.quantity');
+            const removeBtn = document.querySelector('.remove');
+            const priceElement = document.querySelector('.price');
+            const fullPriceElement = document.getElementById('full-price');
+            const totalPriceElement = document.getElementById('total-price');
+            
+            let quantity = 1;
+            const basePrice = 2619.00;
+            
+            // Update price display
+            function updatePrice() {
+                const total = basePrice * quantity;
+                priceElement.textContent = `₹${total.toFixed(2)}`;
+                fullPriceElement.textContent = `₹${total.toFixed(2)}`;
+                totalPriceElement.textContent = `₹${total.toFixed(2)}`;
+            }
+            
+            // Event listeners
+            decrementBtn.addEventListener('click', function() {
+                if (quantity > 1) {
+                    quantity--;
+                    quantityDisplay.textContent = quantity;
+                    updatePrice();
+                }
+            });
+            
+            incrementBtn.addEventListener('click', function() {
+                quantity++;
+                quantityDisplay.textContent = quantity;
+                updatePrice();
+            });
+            
+            removeBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to remove this item from your cart?')) {
+                    document.querySelector('.cart-item').remove();
+                    updatePrice();
+                }
+            });
+            
+            // Add to cart functionality for related games
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const gameCard = this.closest('.game-card');
+                    const gameName = gameCard.querySelector('h3').textContent;
+                    const gamePlatform = gameCard.querySelector('p').textContent.split(' | ')[0];
+                    const gamePrice = gameCard.querySelector('.game-price').textContent;
+                    
+                    alert(`${gameName} (${gamePlatform}) has been added to your cart! Price: ${gamePrice}`);
+                });
+            });
+            
+            // Voucher application
+            document.getElementById('apply-voucher').addEventListener('click', function() {
+                const voucherCode = document.getElementById('voucher-code').value.trim();
+                if (voucherCode) {
+                    alert(`Voucher code "${voucherCode}" applied! (Note: This is a demo - no actual discount applied)`);
+                } else {
+                    alert('Please enter a voucher code');
+                }
+            });
+            
+            // Gift checkbox
+            document.getElementById('gift-checkbox').addEventListener('change', function() {
+                if (this.checked) {
+                    alert('Gift option selected! You will be able to enter recipient details at checkout.');
+                }
+            });
+        });
+        
+        // Image error handling
+        function handleImageError(img) {
+            if (!img.dataset.errorHandled) {  
+                console.log("Image failed to load:", img.src);
+                img.src = "https://via.placeholder.com/150?text=Game+Image";
+                img.dataset.errorHandled = "true"; 
+            }
+        }
+        
+        // Initialize image error handlers
+        document.querySelectorAll("img").forEach(img => {
+            img.onerror = function() {
+                handleImageError(this);
+            };
+        });
+    </script>
+</body>
+</html>

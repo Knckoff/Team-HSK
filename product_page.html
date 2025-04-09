@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil 4 - Game Page</title>
+    <link rel="stylesheet" href="Product_pagestyle.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="home_page.html">🎮 GameShop</a></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for games...">
+        </div>
+        <a href="shopping_cart_sample.html" class="cart-btn"> 🛒 Cart</a>
+        <button id="loginBtn" onclick="location.href='login_sample.html'">Login</button>
+    </header>
+
+    <main>
+        <div class="back-section">
+            <a href="all_item_page.html" class="back-btn">⬅ Back</a>
+        </div>
+        <section class="game-details">
+            <div class="game-images">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1358026638599917728/Game_image_2.jpg?ex=67f2585d&is=67f106dd&hm=0cc25bf2685bf2045b7395f905c665c4a18a737a1d39f41c438e75de7b1ea540&" alt="Screenshot 1">
+                        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1358026638838988960/Game_image_1.jpg?ex=67f2585d&is=67f106dd&hm=5bc820f146a09552d8dda1292c963d7d45a982b976943f253dd2d7983174364d&" alt="Screenshot 2">
+                        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1358026639086325760/game_image_4.jpg?ex=67f2585d&is=67f106dd&hm=7be43ac54a5c3528c9268fffdbc8ab147d8cd51bd85e20285335e39aa077de1b&" alt="Screenshot 3">
+                        <img src="https://cdn.discordapp.com/attachments/1356523446422605886/1358026639338115203/Game_image_3.jpg?ex=67f2585d&is=67f106dd&hm=0711c67c448d2cd0764364bb5e398f32dacfd5f4f48530793c8eefd3700a166e&" alt="Screenshot 4">
+                    </div>
+                </div>
+                <button class="prev" onclick="prevSlide()">❮</button>
+                <button class="next" onclick="nextSlide()">❯</button>
+            </div>
+            
+            <div class="game-info">
+                <h1>Red Dead Redemption 2</h1>
+                <p class="platform">PC, PS4, Xbox One</p>
+                <p class="price">₹3,599.00</p>
+                <p class="description">Experience an epic tale of honor and loyalty set in the dying days of the Wild West. Step into the boots of Arthur Morgan and explore a stunning open world.</p>
+                <a href="shopping_cart_sample.html" class="buy-btn" >Buy Now</a>
+            </div>
+        </section>
+
+        <section class="system-requirements">
+            <h2>System Requirements</h2>
+            <ul>
+                <li><strong>OS:</strong> Windows 10 64-bit</li>
+                <li><strong>Processor:</strong> Intel Core i7-4770K / Ryzen 5 1500X</li>
+                <li><strong>Memory:</strong> 12GB RAM</li>
+                <li><strong>Graphics:</strong> NVIDIA GTX 1060 / AMD RX 480</li>
+                <li><strong>Storage:</strong> 150GB available space</li>
+            </ul>
+        </section>
+
+        <section class="reviews">
+            <h2>User Reviews</h2>
+            <div class="reviews-list"></div>
+            
+            <div class="review-form">
+                <input type="text" id="reviewer-name" placeholder="Your Name">    
+                <textarea id="review-text" placeholder="Write your review here..."></textarea>
+                <button onclick="submitReview()">Submit Review</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-icons">
+            <a href="#">🔵 Facebook</a>
+            <a href="#">📷 Instagram</a>
+            <a href="#">🐦 Twitter</a>
+        </div>
+        <p>&copy; 2025 GameShop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Slider functionality
+        let currentSlide = 0;
+        let autoSlideInterval;
+        const slides = document.querySelector(".slides");
+        const slideItems = document.querySelectorAll(".slides img");
+        const totalSlides = slideItems.length;
+    
+        // Initialize slider
+        function initSlider() {
+            createDots();
+            showSlide(currentSlide);
+            startAutoSlide();
+        }
+    
+        // Show specific slide
+        function showSlide(index) {
+            // Handle wrap-around
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+    
+            // Reset transition for instant response when changing direction
+            resetTransition();
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            updateDots();
+        }
+    
+        // Reset transition for smooth animation
+        function resetTransition() {
+            slides.style.transition = 'none';
+            void slides.offsetWidth; // Trigger reflow
+            slides.style.transition = 'transform 0.5s ease-in-out';
+        }
+    
+        // Navigation functions
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+            resetAutoSlide();
+        }
+    
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+            resetAutoSlide();
+        }
+    
+        // Auto-slide functionality
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000);
+        }
+    
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+    
+        // Dot navigation
+        function createDots() {
+            const dotsContainer = document.createElement('div');
+            dotsContainer.className = 'dots-container';
+            
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                dot.addEventListener('click', () => {
+                    showSlide(i);
+                    resetAutoSlide();
+                });
+                dotsContainer.appendChild(dot);
+            }
+            
+            document.querySelector('.slider').appendChild(dotsContainer);
+        }
+    
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+    
+        // Review system
+        let selectedRating = 0;
+        
+        document.querySelectorAll(".star").forEach(star => {
+            star.addEventListener("click", function() {
+                selectedRating = parseInt(this.getAttribute("data-value"));
+                updateStars(selectedRating);
+            });
+        });
+    
+        function updateStars(rating) {
+            const stars = document.querySelectorAll(".star");
+            stars.forEach((star, index) => {
+                star.classList.toggle("active", index < rating);
+            });
+        }
+    
+        function submitReview() {
+            const name = document.getElementById("reviewer-name").value.trim();
+            const text = document.getElementById("review-text").value.trim();
+            const reviewsList = document.querySelector(".reviews-list");
+    
+            if (!name || !text || selectedRating === 0) {
+                alert("Please fill in all fields and select a rating.");
+                return;
+            }
+    
+            const review = document.createElement("div");
+            review.className = "review";
+            review.innerHTML = `
+                <strong>${name}</strong>
+                <div class="rating">${"⭐".repeat(selectedRating)}</div>
+                <p>${text}</p>
+                <small>${new Date().toLocaleDateString()}</small>
+            `;
+            
+            reviewsList.prepend(review);
+            
+            // Reset form
+            document.getElementById("reviewer-name").value = "";
+            document.getElementById("review-text").value = "";
+            selectedRating = 0;
+            updateStars(0);
+        }
+    
+        // Initialize on load
+        document.addEventListener("DOMContentLoaded", initSlider);
+    </script>
+</body>
+</html>
